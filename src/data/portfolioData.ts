@@ -109,7 +109,7 @@ export const portfolioData: CandidateProfile = {
         "Regularly assisted family, friends, internet people in solving computer-related problems (e.g. virus removal, slow internet connection, troubleshooting).",
         "Provided basic guidance on using Microsoft Office and Google Workspace applications.",
       ],
-      logoUrl: "https://sman1haurgeulis.sch.id/img/smantulis.webp", // Placeholder logo
+      logoUrl: "https://placehold.co/100x100.png?text=Community", // Placeholder logo
     },
     // Add more work experience items here by duplicating the object structure above.
   ],
@@ -124,7 +124,7 @@ export const portfolioData: CandidateProfile = {
         "Achieved a GPA of 94/100.",
         "Graduated with a strong foundation for technical learning."
       ],
-      logoUrl: "https://sman1haurgeulis.sch.id/img/smantulis.webp", // Placeholder for school logo
+      logoUrl: "https://sman1haurgeulis.sch.id/img/smantulis.webp",
     },
     // Add more education items here.
   ],
@@ -132,17 +132,17 @@ export const portfolioData: CandidateProfile = {
   projects: [
     {
       id: "proj_homelab",
-      name: "Home Lab",
+      name: "Home Lab & Personal Computer Projects",
       description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
-      technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      technologies: ["Windows 10/11", "Linux", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
       imageUrl: "https://placehold.co/600x400.png", 
       dataAiHint: "setup computer", // Keywords for project image (max 2 words)
     },
     {
       id: "proj_homeserver",
-      name: "Home Server",
-      description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
-      technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      name: "Home Server Exploration",
+      description: "Experimented with setting up a home server using an old PC, exploring concepts like network-attached storage (NAS) basics and media streaming. Focused on understanding server roles and remote access fundamentals.",
+      technologies: ["Linux", "Networking Basics", "Hardware Repurposing", "Samba (Basic NAS)", "Plex (Media Streaming)"],
       imageUrl: "https://placehold.co/600x400.png", 
       dataAiHint: "setup server", // Keywords for project image (max 2 words)
     }
@@ -157,40 +157,40 @@ export const portfolioData: CandidateProfile = {
         name: "Operating Systems",
         icon: Laptop, // Icon from lucide-react
         skills: [
-          { name: "Windows 10/11 (Installation & Configuration)" }, // Proficiency can be added, e.g., proficiency: 80
-          { name: "Basic Linux (Ubuntu/Debian)" },
-          { name: "Dual-Boot Environments" },
+          { name: "Windows 10/11", proficiency: 90 }, 
+          { name: "Basic Linux", proficiency: 70 },
+          { name: "Dual-Boot Environments", proficiency: 75 },
         ],
       },
       {
         name: "Hardware",
         icon: Cpu,
         skills: [
-          { name: "PC Component Identification" },
-          { name: "Hardware Troubleshooting (RAM, HDD/SSD, PSU)" },
-          { name: "Peripheral Management" },
-          { name: "PC Assembly & Upgrades" },
+          { name: "PC Component Identification", proficiency: 85 },
+          { name: "Hardware Troubleshooting", proficiency: 80 },
+          { name: "Peripheral Management", proficiency: 90 },
+          { name: "PC Assembly & Upgrades", proficiency: 75 },
         ],
       },
       {
         name: "Networking",
         icon: Wifi,
         skills: [
-          { name: "TCP/IP Fundamentals" },
-          { name: "DNS & DHCP Configuration" },
-          { name: "Internet Connection Troubleshooting" },
-          { name: "Wi-Fi Setup & Optimization" },
-          { name: "Basic Network Security" },
+          { name: "TCP/IP Fundamentals", proficiency: 70 },
+          { name: "DNS & DHCP Configuration", proficiency: 65 },
+          { name: "Internet Connection Troubleshooting", proficiency: 85 },
+          { name: "Wi-Fi Setup & Optimization", proficiency: 80 },
+          { name: "Basic Network Security", proficiency: 60 },
         ],
       },
       {
         name: "Software & Applications",
         icon: AppWindow,
         skills: [
-          { name: "Microsoft Office Suite (Word, Excel)" },
-          { name: "Google Workspace (Docs, Sheets)" },
-          { name: "Application Management" },
-          { name: "Basic Antivirus Management" },
+          { name: "Microsoft Office Suite", proficiency: 90 },
+          { name: "Google Workspace", proficiency: 85 },
+          { name: "Application Management", proficiency: 80 },
+          { name: "Basic Antivirus Management", proficiency: 75 },
         ],
       },
       // Add more technical skill categories here.
