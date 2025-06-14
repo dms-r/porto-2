@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/layout/PageWrapper';
 import SectionTitle from '@/components/SectionTitle';
 import { portfolioData } from '@/data/portfolioData';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Shapes } from 'lucide-react'; // Changed Download to Shapes
 import ProjectCard from '@/components/ProjectCard';
 import ExperienceCard from '@/components/ExperienceCard';
 
@@ -34,9 +34,8 @@ export default function Home() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-foreground dark:hover:bg-secondary/20 dark:hover:text-foreground shadow-lg hover:shadow-xl transition-shadow">
-                {/* Replace with actual resume link or functionality */}
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer"> 
-                  Download CV <Download className="ml-2 h-5 w-5" />
+                <Link href="/projects"> 
+                  Explore Projects <Shapes className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
