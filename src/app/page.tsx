@@ -41,7 +41,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-fadeInUp lg:col-span-2">
+          <div className="relative aspect-video md:aspect-square rounded-full overflow-hidden shadow-2xl animate-fadeInUp lg:col-span-2">
             <Image
               src={heroImage}
               alt={`${name} - ${title}`}
