@@ -90,9 +90,9 @@ export interface CandidateProfile {
 export const portfolioData: CandidateProfile = {
   name: "Dimas Refaldy",
   title: "IT Enthusiast",
-  bio: "A passionate high school graduate with a strong interest in technology, economics, and philosophy.",
+  bio: "Someone with a strong interest in technology, economics, and philosophy.",
   heroImage: "https://avatars.githubusercontent.com/u/174266241?v=4",
-  heroImageAiHint: "tech setup computer", // Keywords for hero image (max 2 words)
+  heroImageAiHint: "photo profile", // Keywords for hero image (max 2 words)
   contact: {
     email: "dimas@dpublic.my.id",
     linkedin: "https://linkedin.com/in/dimas-refaldy",
@@ -101,16 +101,28 @@ export const portfolioData: CandidateProfile = {
   // To add a new work experience, copy an existing block, modify its content, and ensure 'id' is unique.
   workExperience: [
     {
-      id: "exp2",
+      id: "exp1",
       company: "Community Support",
       jobTitle: "Informal Technical Support",
-      employmentDates: "2024 - Present",
+      employmentDates: "2023 - Present",
       description: [
-        "Regularly assisted family, friends, internet people in solving computer-related problems (e.g. virus removal, slow internet connection, troubleshooting).",
-        "Provided basic guidance on using Microsoft Office and Google Workspace applications.",
+        "Regularly assisted family, friends, internet citizens in solving computer-related problems.",
+        "Create documentation both formal and non-formal in Google Workspace.",
       ],
       logoUrl: "https://placehold.co/100x100.png?text=Community", // Placeholder logo
     },
+    {
+      id: "exp2",
+      company: "Freelance",
+      jobTitle: "Bug Hunter",
+      employmentDates: "2023 - Present",
+      description: [
+        "Analyze the vulnerability of a web or mobile app, thus ensuring it remains safe from similar attacks.",
+        "Create reports or documentation needed to report bugs found.",
+      ],
+      logoUrl: "https://placehold.co/100x100.png?text=Bug Hunter", // Placeholder logo
+    },
+
     // Add more work experience items here by duplicating the object structure above.
   ],
   // To add a new education entry, copy an existing block, modify its content, and ensure 'id' is unique.
@@ -132,21 +144,22 @@ export const portfolioData: CandidateProfile = {
   projects: [
     {
       id: "proj_homelab",
-      name: "Home Lab & Personal Computer Projects",
-      description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
-      technologies: ["Windows 10/11", "Linux", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      name: "Home Lab",
+      description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting, and optimization of home Wi-Fi networks.",
+      technologies: ["Windows 10/11", "Linux", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization"],
       imageUrl: "https://placehold.co/600x400.png", 
       dataAiHint: "setup computer", // Keywords for project image (max 2 words)
     },
     {
-      id: "proj_homeserver",
-      name: "Home Server Exploration",
-      description: "Experimented with setting up a home server using an old PC, exploring concepts like network-attached storage (NAS) basics and media streaming. Focused on understanding server roles and remote access fundamentals.",
-      technologies: ["Linux", "Networking Basics", "Hardware Repurposing", "Samba (Basic NAS)", "Plex (Media Streaming)"],
-      imageUrl: "https://placehold.co/600x400.png", 
-      dataAiHint: "setup server", // Keywords for project image (max 2 words)
-    }
-
+      "id": "proj_homeserver",
+      "name": "Virtual Home Server",
+      "description": "I set up a virtual home server on my laptop using VirtualBox and Debian Linux. This project allowed me to explore core home server functionalities. I gained hands-on experience understanding various server roles and the fundamentals of remote access and management within a virtualized environment.",
+      "technologies": ["Linux", "VirtualBox", "Networking Basics", "SSH"],
+      "imageUrl": "https://placehold.co/600x400.png",
+      "dataAiHint": "setup server"
+    },
+    
+        
     // Add more project items here.
   ],
   skills: {

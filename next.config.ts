@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'sman1haurgeulis.sch.id',
         port: '',
-        pathname: '/img/**',
+        pathname: '/**', // Changed from /img/** to allow any path
       },
       {
         protocol: 'https',
