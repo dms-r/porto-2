@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/layout/PageWrapper';
 import SectionTitle from '@/components/SectionTitle';
 import { portfolioData } from '@/data/portfolioData';
-import { ArrowRight, Shapes } from 'lucide-react'; // Changed Download to Shapes
+import { ArrowRight, Users } from 'lucide-react'; // Changed Shapes to Users
 import ProjectCard from '@/components/ProjectCard';
 import ExperienceCard from '@/components/ExperienceCard';
 
@@ -34,8 +34,8 @@ export default function Home() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-foreground dark:hover:bg-secondary/20 dark:hover:text-foreground shadow-lg hover:shadow-xl transition-shadow">
-                <Link href="/projects"> 
-                  Explore Projects <Shapes className="ml-2 h-5 w-5" />
+                <Link href="/skills"> 
+                  View Skills <Users className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
