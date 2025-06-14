@@ -5,9 +5,10 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, Briefcase, Code, Lightbulb, Users, Mail, Brain } from 'lucide-react'; // Brain for Profile Tailoring
+import { Menu, Briefcase, Code, Lightbulb, Users, Mail, Brain } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: <Lightbulb className="mr-2 h-5 w-5" /> },
@@ -42,24 +43,26 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+        <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
           {navLinks.map((link) => (
             <Button
               key={link.href}
               variant="ghost"
               asChild
               className={cn(
-                "text-foreground hover:bg-accent/20 hover:text-accent transition-all duration-200",
-                pathname === link.href ? "text-accent font-semibold border-b-2 border-accent" : ""
+                "text-foreground hover:bg-accent/20 hover:text-accent transition-all duration-200 px-3 py-2 text-sm",
+                pathname === link.href ? "text-accent font-semibold border-b-2 border-accent rounded-none" : ""
               )}
             >
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
+          <ThemeToggle className="ml-2" />
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
+          <ThemeToggle className="mr-2" />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open navigation menu">
@@ -68,9 +71,11 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background p-6">
               <div className="flex flex-col space-y-4">
-                <Link href="/" className="mb-6 text-2xl font-headline font-bold text-primary" onClick={() => setIsSheetOpen(false)}>
-                  ElegantFolio
-                </Link>
+                <SheetClose asChild>
+                  <Link href="/" className="mb-6 text-2xl font-headline font-bold text-primary">
+                    ElegantFolio
+                  </Link>
+                </SheetClose>
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                      <Link
