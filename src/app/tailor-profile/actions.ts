@@ -1,4 +1,4 @@
-"use server";
+// "use server"; // Removed for static export compatibility with GitHub Pages
 
 import { portfolioData, type CandidateProfile } from '@/data/portfolioData';
 
@@ -7,7 +7,13 @@ import { portfolioData, type CandidateProfile } from '@/data/portfolioData';
 // For this example, we'll simulate an AI call.
 
 export async function generateSummaryAction(jobDescription: string): Promise<{ summary?: string; error?: string }> {
-  // The actual AI flow would need the candidate's profile data.
+  // For static export (GitHub Pages), Server Actions are not supported.
+  // This feature will not work in the statically exported version.
+  console.warn("Profile tailoring feature (Server Action) is not available in static export mode.");
+  return { error: "The AI profile tailoring feature is not available on this statically hosted site. For full functionality, please visit a deployment that supports server-side features or contact the administrator." };
+
+  // Original Server Action logic (commented out to allow static build):
+  /*
   const candidateProfile: CandidateProfile = portfolioData;
 
   try {
@@ -34,4 +40,5 @@ export async function generateSummaryAction(jobDescription: string): Promise<{ s
     console.error("AI Generation Error:", e);
     return { error: e.message || "An unexpected error occurred while generating the summary." };
   }
+  */
 }
