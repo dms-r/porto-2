@@ -21,7 +21,7 @@ export default function Home() {
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
               Hi, I&apos;m <span className="text-accent">{name}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground font-medium">
+            <p className="text-xl md:text-2xl text-primary font-medium">
               {title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -33,7 +33,7 @@ export default function Home() {
                   View My Work <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 shadow-lg hover:shadow-xl transition-shadow">
+              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-secondary-foreground dark:hover:bg-secondary/20 dark:hover:text-secondary-foreground shadow-lg hover:shadow-xl transition-shadow">
                 {/* Replace with actual resume link or functionality */}
                 <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer"> 
                   Download CV <Download className="ml-2 h-5 w-5" />

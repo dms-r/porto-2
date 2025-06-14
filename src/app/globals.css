@@ -55,7 +55,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .dark {
-    /* Basic dark theme, can be expanded if needed */
     --background: 227 30% 15%; /* Dark Navy */
     --foreground: 220 13% 90%; /* Light Gray */
 
@@ -65,17 +64,17 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 227 30% 15%;
     --popover-foreground: 220 13% 90%;
 
-    --primary: 190 28% 65%; /* Lighter Muted Teal (was 190 28% 57%) */
+    --primary: 190 28% 65%; /* Lighter Muted Teal (for main headings, primary button bg) */
     --primary-foreground: 227 30% 15%; /* Dark Navy for text on primary */
 
-    --secondary: 227 30% 30%; /* Medium Navy */
-    --secondary-foreground: 0 0% 100%; /* White for text on secondary */
+    --secondary: 190 28% 57%; /* Darker Muted Teal (for Download CV button border) */
+    --secondary-foreground: 0 0% 100%; /* White (for Download CV button text) */
 
     --muted: 227 30% 25%;
     --muted-foreground: 220 10% 60%;
 
-    --accent: 190 28% 65%; /* Lighter Muted Teal */
-    --accent-foreground: 227 30% 15%;
+    --accent: 190 28% 65%; /* Lighter Muted Teal (same as primary for consistent heading color) */
+    --accent-foreground: 227 30% 15%; /* Dark Navy text on accent */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -110,4 +109,3 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
-
