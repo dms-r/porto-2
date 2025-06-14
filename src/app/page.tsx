@@ -33,7 +33,7 @@ export default function Home() {
                   View My Work <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-foreground dark:hover:bg-secondary/20 dark:hover:text-foreground shadow-lg hover:shadow-xl transition-shadow">
+              <Button variant="outline" size="lg" asChild className="border-primary text-foreground hover:bg-primary/10 dark:border-secondary dark:text-foreground dark:hover:bg-secondary/20 dark:hover:text-foreground shadow-lg hover:shadow-xl transition-shadow">
                 <Link href="/skills"> 
                   View Skills <Users className="ml-2 h-5 w-5" />
                 </Link>
