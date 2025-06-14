@@ -58,13 +58,13 @@ h1, h2, h3, h4, h5, h6 {
     --background: 227 30% 15%; /* Dark Navy */
     --foreground: 220 13% 90%; /* Light Gray */
 
-    --card: 227 30% 20%; /* Slightly lighter Dark Navy */
+    --card: 227 30% 15%; /* Dark Navy - Same as background */
     --card-foreground: 220 13% 90%;
 
     --popover: 227 30% 15%;
     --popover-foreground: 220 13% 90%;
 
-    --primary: 190 28% 65%; /* Lighter Muted Teal (for main headings, primary button bg) */
+    --primary: 190 28% 65%; /* Lighter Muted Teal (for "Hi, I'm", primary button bg) */
     --primary-foreground: 227 30% 15%; /* Dark Navy for text on primary */
 
     --secondary: 190 28% 57%; /* Darker Muted Teal (for Download CV button border) */
@@ -73,8 +73,8 @@ h1, h2, h3, h4, h5, h6 {
     --muted: 227 30% 25%;
     --muted-foreground: 220 10% 60%;
 
-    --accent: 190 28% 65%; /* Lighter Muted Teal (same as primary for consistent heading color) */
-    --accent-foreground: 227 30% 15%; /* Dark Navy text on accent */
+    --accent: 190 28% 45%; /* Darker Muted Teal (for "Dimas Refaldy" part of heading) */
+    --accent-foreground: 227 30% 15%; /* Dark Navy text on accent (not used in hero heading) */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -109,3 +109,4 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
