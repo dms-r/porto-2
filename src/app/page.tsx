@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center bg-card py-16 md:py-24 animate-fadeIn">
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-16 items-center">
-          <div className="space-y-6 animate-slide-in-left text-center md:text-left lg:col-span-3">
+          <div className="space-y-6 text-center md:text-left lg:col-span-3 animate-fadeInUp">
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
               Hi, I&apos;m <span className="text-accent">{name}</span>
             </h1>
@@ -33,7 +33,7 @@ export default function Home() {
                   View My Work <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-secondary-foreground dark:hover:bg-secondary/20 dark:hover:text-secondary-foreground shadow-lg hover:shadow-xl transition-shadow">
+              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/10 dark:border-secondary dark:text-foreground dark:hover:bg-secondary/20 dark:hover:text-foreground shadow-lg hover:shadow-xl transition-shadow">
                 {/* Replace with actual resume link or functionality */}
                 <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer"> 
                   Download CV <Download className="ml-2 h-5 w-5" />
@@ -41,7 +41,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-slide-in-right lg:col-span-2">
+          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-fadeInUp lg:col-span-2">
             <Image
               src={heroImage}
               alt={`${name} - ${title}`}
