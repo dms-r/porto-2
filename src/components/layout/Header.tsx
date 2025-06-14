@@ -39,7 +39,7 @@ export default function Header() {
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="text-3xl font-headline font-bold text-primary hover:text-accent transition-colors" aria-label="ElegantFolio Home">
-          ElegantFolio
+          dpublic
         </Link>
 
         {/* Desktop Navigation */}

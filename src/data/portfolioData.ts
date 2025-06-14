@@ -89,8 +89,8 @@ export interface CandidateProfile {
 
 export const portfolioData: CandidateProfile = {
   name: "Dimas Refaldy",
-  title: "Passionate IT Enthusiast & High School Graduate",
-  bio: "A passionate high school graduate with a strong interest in computer and network technology. Possess basic hardware/software and network troubleshooting skills from self-learning experiences and personal projects. Highly committed to learning and contributing to the field of technology.",
+  title: "IT Enthusiast",
+  bio: "A passionate high school graduate with a strong interest in technology, economics, and philosophy.",
   heroImage: "https://placehold.co/1200x600.png",
   heroImageAiHint: "tech setup computer", // Keywords for hero image (max 2 words)
   contact: {
@@ -106,10 +106,10 @@ export const portfolioData: CandidateProfile = {
       jobTitle: "Informal Technical Support",
       employmentDates: "2024 - Present",
       description: [
-        "Regularly assisted family and friends in solving computer-related problems (e.g. printer error, virus removal, slow internet connection).",
+        "Regularly assisted family, friends, internet people in solving computer-related problems (e.g. virus removal, slow internet connection, troubleshooting).",
         "Provided basic guidance on using Microsoft Office and Google Workspace applications.",
       ],
-      logoUrl: "https://placehold.co/100x100.png", // Placeholder logo
+      logoUrl: "https://sman1haurgeulis.sch.id/img/smantulis.webp", // Placeholder logo
     },
     // Add more work experience items here by duplicating the object structure above.
   ],
@@ -117,15 +117,14 @@ export const portfolioData: CandidateProfile = {
   education: [
     {
       id: "edu1",
-      company: "SMAN 1 Haurgeulis, Indramayu", // Institution name
-      jobTitle: "Student - Mathematics and Natural Sciences", // Program/Degree
-      employmentDates: "2022 - 2024", // Duration
+      company: "SMAN 1 Haurgeulis", // Institution name
+      jobTitle: "Mathematics and Natural Sciences", // Program/Degree
+      employmentDates: "2022 - 2025", // Duration
       description: [
-        "Focused on Mathematics and Natural Sciences.",
         "Achieved a GPA of 94/100.",
         "Graduated with a strong foundation for technical learning."
       ],
-      logoUrl: "https://placehold.co/100x100.png", // Placeholder for school logo
+      logoUrl: "https://sman1haurgeulis.sch.id/img/smantulis.webp", // Placeholder for school logo
     },
     // Add more education items here.
   ],
@@ -133,12 +132,21 @@ export const portfolioData: CandidateProfile = {
   projects: [
     {
       id: "proj_homelab",
-      name: "Home Lab & Personal Computer Setup",
-      description: "A self-driven project involving PC assembly from components, installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
-      technologies: ["PC Assembly", "Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      name: "Home Lab",
+      description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
+      technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
       imageUrl: "https://placehold.co/600x400.png", 
-      dataAiHint: "computer hardware setup", // Keywords for project image (max 2 words)
+      dataAiHint: "setup computer", // Keywords for project image (max 2 words)
+    },
+    {
+      id: "proj_homeserver",
+      name: "Home Server",
+      description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
+      technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      imageUrl: "https://placehold.co/600x400.png", 
+      dataAiHint: "setup server", // Keywords for project image (max 2 words)
     }
+
     // Add more project items here.
   ],
   skills: {

@@ -8,15 +8,15 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ElegantFolio - Dimas Refaldy Portfolio',
-    template: '%s | ElegantFolio - Dimas Refaldy',
+    default: 'Dimas Refaldy Portfolio',
+    template: '%s | Dimas Refaldy',
   },
   description: 'Welcome to the professional portfolio of Dimas Refaldy, a passionate IT enthusiast and high school graduate. Explore projects, skills, and experience.',
   keywords: ['IT support', 'network technology', 'hardware troubleshooting', 'software configuration', 'Dimas Refaldy', 'portfolio', 'fresh graduate', 'technical support'],
   authors: [{ name: 'Dimas Refaldy' }],
   creator: 'Dimas Refaldy',
   openGraph: {
-    title: 'ElegantFolio - Dimas Refaldy Portfolio',
+    title: 'Dimas Refaldy Portfolio',
     description: 'Discover Dimas Refaldy\'s journey in IT and network technology.',
     type: 'website',
     locale: 'en_US',
