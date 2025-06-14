@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, Briefcase, Code, Lightbulb, Users, Mail } from 'lucide-react';
+import { Menu, Briefcase, Code, Lightbulb, Users, Mail, GraduationCap } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -13,6 +13,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 const navLinks = [
   { href: '/', label: 'Home', icon: <Lightbulb className="mr-2 h-5 w-5" /> },
   { href: '/experience', label: 'Experience', icon: <Briefcase className="mr-2 h-5 w-5" /> },
+  { href: '/education', label: 'Education', icon: <GraduationCap className="mr-2 h-5 w-5" /> },
   { href: '/projects', label: 'Projects', icon: <Code className="mr-2 h-5 w-5" /> },
   { href: '/skills', label: 'Skills', icon: <Users className="mr-2 h-5 w-5" /> },
   { href: '/contact', label: 'Contact', icon: <Mail className="mr-2 h-5 w-5" /> },

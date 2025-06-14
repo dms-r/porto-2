@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from 'lucide-react';
-import { Briefcase, Lightbulb, Users, Mail, Linkedin, Github, Brain, ExternalLink, Palette, ShieldCheck, Zap, Laptop, Cpu, Wifi, AppWindow, Code2, Layers3, Wrench, Settings2 } from 'lucide-react';
+import { Briefcase, Lightbulb, Users, Mail, Linkedin, Github, Brain, ExternalLink, Palette, ShieldCheck, Zap, Laptop, Cpu, Wifi, AppWindow, Code2, Layers3, Wrench, Settings2, GraduationCap } from 'lucide-react';
 
 export interface WorkExperienceItem {
   id: string;
@@ -10,6 +10,10 @@ export interface WorkExperienceItem {
   description: string[];
   logoUrl?: string;
 }
+
+// Using WorkExperienceItem structure for Education items for component reusability
+// company -> institution, jobTitle -> program/degree, employmentDates -> duration
+export type EducationItem = WorkExperienceItem;
 
 export interface ProjectItem {
   id: string;
@@ -40,6 +44,7 @@ export interface CandidateProfile {
     github: string;
   };
   workExperience: WorkExperienceItem[];
+  education: EducationItem[];
   projects: ProjectItem[];
   skills: {
     technical: SkillCategory[];
@@ -60,19 +65,6 @@ export const portfolioData: CandidateProfile = {
   },
   workExperience: [
     {
-      id: "exp1",
-      company: "Personal Initiatives",
-      jobTitle: "Home Lab & Personal Computer Projects",
-      employmentDates: "2023 - Present",
-      description: [
-        "Configured a personal desktop PC from separate components, including operating system and driver installation.",
-        "Performed hardware troubleshooting and upgrades on family and friends' laptops (e.g. RAM replacement, SSD).",
-        "Learned and implemented dual-boot operating systems (Windows and Linux) on personal devices.",
-        "Configured and optimized home Wi-Fi networks for stability and security.",
-      ],
-      logoUrl: "https://placehold.co/100x100.png",
-    },
-    {
       id: "exp2",
       company: "Community Support",
       jobTitle: "Informal Technical Support",
@@ -83,11 +75,13 @@ export const portfolioData: CandidateProfile = {
       ],
       logoUrl: "https://placehold.co/100x100.png",
     },
+  ],
+  education: [
     {
       id: "edu1",
-      company: "SMAN 1 Haurgeulis, Indramayu",
-      jobTitle: "Student - Mathematics and Natural Sciences",
-      employmentDates: "2022 - 2024", // Assuming graduation based on "high school graduate"
+      company: "SMAN 1 Haurgeulis, Indramayu", // Displayed as Institution
+      jobTitle: "Student - Mathematics and Natural Sciences", // Displayed as Program/Major
+      employmentDates: "2022 - 2024", // Displayed as Duration
       description: [
         "Focused on Mathematics and Natural Sciences.",
         "Achieved a GPA of 94/100.",
@@ -98,15 +92,21 @@ export const portfolioData: CandidateProfile = {
   ],
   projects: [
     {
-      id: "proj1",
-      name: "Personal Computing & Networking Lab",
+      id: "proj1_existing", // Keep original project, ensure ID is unique if conflicts
+      name: "Personal Computing & Networking Lab", // Original name was more generic
       description: "A hands-on initiative focusing on PC assembly, multi-OS configuration (Windows & Linux), hardware troubleshooting, and optimizing home network setups. This project showcases practical skills in system administration and network management.",
       technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Assembly", "Network Troubleshooting", "Wi-Fi Optimization", "Dual Boot"],
       imageUrl: "https://placehold.co/600x400.png",
       dataAiHint: "computer components network",
-      // liveDemoUrl: "#", // No live demo applicable
-      // githubRepoUrl: "#", // No specific repo applicable from resume
     },
+    {
+      id: "proj_homelab",
+      name: "Home Lab & Personal Computer Setup",
+      description: "A self-driven project involving PC assembly from components, installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
+      technologies: ["PC Assembly", "Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
+      imageUrl: "https://placehold.co/600x400.png", 
+      dataAiHint: "computer hardware setup",
+    }
   ],
   skills: {
     technical: [
