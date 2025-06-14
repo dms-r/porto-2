@@ -67,8 +67,8 @@ h1, h2, h3, h4, h5, h6 {
     --primary: 190 28% 65%; /* Lighter Muted Teal (for "Hi, I'm", primary button bg) */
     --primary-foreground: 227 30% 15%; /* Dark Navy for text on primary */
 
-    --secondary: 190 28% 57%; /* Darker Muted Teal (for Download CV button border) */
-    --secondary-foreground: 0 0% 100%; /* White (for Download CV button text) */
+    --secondary: 190 28% 57%; /* Darker Muted Teal (for Download CV button border, badge bg) */
+    --secondary-foreground: 227 30% 15%; /* Dark Navy for text on secondary (Updated for badge readability) */
 
     --muted: 227 30% 25%;
     --muted-foreground: 220 10% 60%;
@@ -109,4 +109,3 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
-
