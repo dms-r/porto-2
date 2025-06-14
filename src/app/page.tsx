@@ -16,8 +16,8 @@ export default function Home() {
     <PageWrapper className="!py-0"> {/* Override default PageWrapper padding for hero */}
       {/* Hero Section */}
       <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center bg-card py-16 md:py-24 animate-fadeIn">
-        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-          <div className="space-y-6 animate-slide-in-left text-center md:text-left">
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-16 items-center">
+          <div className="space-y-6 animate-slide-in-left text-center md:text-left lg:col-span-3">
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
               Hi, I&apos;m <span className="text-accent">{name}</span>
             </h1>
@@ -41,7 +41,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-slide-in-right">
+          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-slide-in-right lg:col-span-2">
             <Image
               src={heroImage}
               alt={`${name} - ${title}`}
