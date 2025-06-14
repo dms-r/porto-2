@@ -158,7 +158,14 @@ export const portfolioData: CandidateProfile = {
       "imageUrl": "https://placehold.co/600x400.png",
       "dataAiHint": "setup server"
     },
-    
+    {
+      "id": "proj_pentest",
+      "name": "Pentest CBT App",
+      "description": "I set up a virtual home server on my laptop using VirtualBox and Debian Linux. This project allowed me to explore core home server functionalities. I gained hands-on experience understanding various server roles and the fundamentals of remote access and management within a virtualized environment.",
+      "technologies": ["Nmap", "IDOR", "Network", "Apk", "Web", "Subdommain"],
+      "imageUrl": "https://placehold.co/600x400.png",
+      "dataAiHint": "pentest cbt"
+    },
         
     // Add more project items here.
   ],

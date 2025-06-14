@@ -67,7 +67,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle>Featured Projects</SectionTitle>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
+            {projects.slice(0, 6).map((project, index) => (
               <div key={project.id} className="animate-fadeInUp" style={{ animationDelay: `${index * 0.1}s` }}>
                 <ProjectCard project={project} />
               </div>

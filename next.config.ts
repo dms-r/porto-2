@@ -20,16 +20,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'sman1haurgeulis.sch.id',
-        port: '',
-        pathname: '/**', // Changed from /img/** to allow any path
-      },
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
+        hostname: '**',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
   },
 };
