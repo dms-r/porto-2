@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 227 30% 15%;
     --popover-foreground: 220 13% 90%;
 
-    --primary: 190 28% 57%; /* Muted Teal as primary in dark */
+    --primary: 190 28% 65%; /* Lighter Muted Teal (was 190 28% 57%) */
     --primary-foreground: 227 30% 15%; /* Dark Navy for text on primary */
 
     --secondary: 227 30% 30%; /* Medium Navy */
@@ -110,3 +110,4 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
