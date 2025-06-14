@@ -41,17 +41,24 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-square rounded-full overflow-hidden shadow-2xl animate-fadeInUp lg:col-span-2 xl:w-96">
-            <Image
-              src={heroImage}
-              alt={`${name} - ${title}`}
-              layout="fill"
-              objectFit="cover"
-              priority
-              data-ai-hint={heroImageAiHint}
-              className="transform hover:scale-105 transition-transform duration-500"
-            />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+          {/* Outer container for grid layout and max width on XL screens */}
+          <div className="relative lg:col-span-2 xl:w-96 animate-fadeInUp">
+            {/* Middle container for border, padding, aspect ratio, shape, and shadow. Centered if xl:w-96 is larger. */}
+            <div className="aspect-video md:aspect-square p-1 border-4 border-primary rounded-full shadow-2xl mx-auto max-w-full">
+              {/* Inner container for the image itself, to ensure it's clipped round and fills the padded area */}
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src={heroImage}
+                  alt={`${name} - ${title}`}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  data-ai-hint={heroImageAiHint}
+                  className="transform hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
