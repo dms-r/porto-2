@@ -91,7 +91,7 @@ export const portfolioData: CandidateProfile = {
   name: "Dimas Refaldy",
   title: "IT Enthusiast",
   bio: "A passionate high school graduate with a strong interest in technology, economics, and philosophy.",
-  heroImage: "https://placehold.co/1200x600.png",
+  heroImage: "https://avatars.githubusercontent.com/u/174266241?v=4",
   heroImageAiHint: "tech setup computer", // Keywords for hero image (max 2 words)
   contact: {
     email: "dimas@dpublic.my.id",

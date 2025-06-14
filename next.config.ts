@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         hostname: 'sman1haurgeulis.sch.id',
         port: '',
         pathname: '/img/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
