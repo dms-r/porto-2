@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <PageWrapper className="!py-0"> {/* Override default PageWrapper padding for hero */}
       {/* Hero Section */}
-      <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center bg-gradient-to-br from-background to-secondary/30 py-16 md:py-24 animate-fadeIn">
+      <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center bg-card py-16 md:py-24 animate-fadeIn">
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="space-y-6 animate-slide-in-left">
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
