@@ -1,68 +1,104 @@
 
-import type { LucideIcon } from 'lucide-react';
-import { Briefcase, Lightbulb, Users, Mail, Linkedin, Github, Brain, ExternalLink, Palette, ShieldCheck, Zap, Laptop, Cpu, Wifi, AppWindow, Code2, Layers3, Wrench, Settings2, GraduationCap } from 'lucide-react';
+// This file serves as the single source of truth for all content in your portfolio.
+// To update your portfolio, you will primarily edit the `portfolioData` object below.
+// Ensure that any new data you add (like projects, experiences, or skills)
+// conforms to the TypeScript interfaces defined in this file.
 
+import type { LucideIcon } from 'lucide-react';
+// Importing icons from lucide-react. Add any new icons you might need for skill categories here.
+import { Laptop, Cpu, Wifi, AppWindow } from 'lucide-react';
+
+// --- INTERFACE DEFINITIONS ---
+// These interfaces define the structure for your portfolio data.
+
+/**
+ * Represents a single work experience item.
+ */
 export interface WorkExperienceItem {
-  id: string;
-  company: string;
-  jobTitle: string;
-  employmentDates: string;
-  description: string[];
-  logoUrl?: string;
+  id: string; // A unique identifier for this item (e.g., "exp1", "exp_company_role").
+  company: string; // The name of the company or organization.
+  jobTitle: string; // Your role or job title.
+  employmentDates: string; // The period of employment (e.g., "Jan 2020 - Dec 2021", "2023 - Present").
+  description: string[]; // An array of strings, where each string is a bullet point describing responsibilities or achievements.
+  logoUrl?: string; // Optional: URL to the company's logo. Use a placeholder like "https://placehold.co/100x100.png" if no logo is available.
 }
 
-// Using WorkExperienceItem structure for Education items for component reusability
-// company -> institution, jobTitle -> program/degree, employmentDates -> duration
+/**
+ * Represents a single education item.
+ * It uses the WorkExperienceItem structure for component reusability in display.
+ * - `company` field will represent the Institution name.
+ * - `jobTitle` field will represent the Degree or Program name.
+ * - `employmentDates` field will represent the duration of study.
+ */
 export type EducationItem = WorkExperienceItem;
 
+/**
+ * Represents a single project item.
+ */
 export interface ProjectItem {
-  id: string;
-  name: string;
-  description: string;
-  technologies: string[];
-  imageUrl: string;
-  liveDemoUrl?: string;
-  githubRepoUrl?: string;
-  dataAiHint: string;
+  id: string; // A unique identifier for this project (e.g., "proj_alpha", "project1").
+  name: string; // The name of the project.
+  description: string; // A brief description of the project.
+  technologies: string[]; // An array of strings listing the technologies used (e.g., ["React", "Node.js", "Firebase"]).
+  imageUrl: string; // URL to an image representing the project. Use a placeholder like "https://placehold.co/600x400.png".
+  liveDemoUrl?: string; // Optional: URL to a live demo of the project.
+  githubRepoUrl?: string; // Optional: URL to the project's GitHub repository.
+  dataAiHint: string; // One or two keywords for AI to find a relevant Unsplash image (e.g., "web app", "mobile interface"). Max two words.
 }
 
+/**
+ * Represents a category of skills (e.g., "Programming Languages", "Tools").
+ */
 export interface SkillCategory {
-  name:string;
-  icon: LucideIcon;
-  skills: { name: string; proficiency?: number }[];
+  name: string; // The name of the skill category (e.g., "Frontend Development").
+  icon: LucideIcon; // An icon component from lucide-react representing this category (e.g., Code2, Database).
+  skills: {
+    name: string; // The name of the specific skill (e.g., "JavaScript", "Git").
+    proficiency?: number; // Optional: A number from 0 to 100 representing your proficiency level. If omitted, a simple badge without a progress bar will be shown.
+  }[];
 }
 
+/**
+ * Defines the overall structure for all portfolio data.
+ */
 export interface CandidateProfile {
-  name: string;
-  title: string;
-  bio: string;
-  heroImage: string;
-  heroImageAiHint: string;
+  name: string; // Your full name.
+  title: string; // Your professional title or headline (e.g., "Software Engineer", "Aspiring Web Developer").
+  bio: string; // A short biography or summary about yourself.
+  heroImage: string; // URL for the main hero image on the homepage. Use a placeholder like "https://placehold.co/1200x600.png".
+  heroImageAiHint: string; // One or two keywords for AI for the hero image (e.g., "developer portrait", "tech workspace"). Max two words.
   contact: {
-    email: string;
-    linkedin: string;
-    github: string;
+    email: string; // Your contact email address.
+    linkedin: string; // Full URL to your LinkedIn profile.
+    github: string; // Full URL to your GitHub profile.
   };
-  workExperience: WorkExperienceItem[];
-  education: EducationItem[];
-  projects: ProjectItem[];
+  workExperience: WorkExperienceItem[]; // An array of your work experiences.
+  education: EducationItem[]; // An array of your educational qualifications.
+  projects: ProjectItem[]; // An array of your projects.
   skills: {
-    technical: SkillCategory[];
-    soft?: string[];
+    technical: SkillCategory[]; // An array of your technical skill categories.
+    soft?: string[]; // Optional: An array of your soft skills.
   };
 }
+
+// --- PORTFOLIO DATA ---
+// This is the main object containing all your portfolio information.
+// Edit the values below to customize your portfolio.
+// To add new items (e.g., a new project or experience),
+// simply add a new object to the respective array, ensuring it follows the defined interface structure.
 
 export const portfolioData: CandidateProfile = {
   name: "Dimas Refaldy",
   title: "Passionate IT Enthusiast & High School Graduate",
   bio: "A passionate high school graduate with a strong interest in computer and network technology. Possess basic hardware/software and network troubleshooting skills from self-learning experiences and personal projects. Highly committed to learning and contributing to the field of technology.",
   heroImage: "https://placehold.co/1200x600.png",
-  heroImageAiHint: "tech setup computer",
+  heroImageAiHint: "tech setup computer", // Keywords for hero image (max 2 words)
   contact: {
     email: "dimas@dpublic.my.id",
     linkedin: "https://linkedin.com/in/dimas-refaldy",
     github: "https://github.com/dms-r",
   },
+  // To add a new work experience, copy an existing block, modify its content, and ensure 'id' is unique.
   workExperience: [
     {
       id: "exp2",
@@ -73,15 +109,17 @@ export const portfolioData: CandidateProfile = {
         "Regularly assisted family and friends in solving computer-related problems (e.g. printer error, virus removal, slow internet connection).",
         "Provided basic guidance on using Microsoft Office and Google Workspace applications.",
       ],
-      logoUrl: "https://placehold.co/100x100.png",
+      logoUrl: "https://placehold.co/100x100.png", // Placeholder logo
     },
+    // Add more work experience items here by duplicating the object structure above.
   ],
+  // To add a new education entry, copy an existing block, modify its content, and ensure 'id' is unique.
   education: [
     {
       id: "edu1",
-      company: "SMAN 1 Haurgeulis, Indramayu", // Displayed as Institution
-      jobTitle: "Student - Mathematics and Natural Sciences", // Displayed as Program/Major
-      employmentDates: "2022 - 2024", // Displayed as Duration
+      company: "SMAN 1 Haurgeulis, Indramayu", // Institution name
+      jobTitle: "Student - Mathematics and Natural Sciences", // Program/Degree
+      employmentDates: "2022 - 2024", // Duration
       description: [
         "Focused on Mathematics and Natural Sciences.",
         "Achieved a GPA of 94/100.",
@@ -89,32 +127,29 @@ export const portfolioData: CandidateProfile = {
       ],
       logoUrl: "https://placehold.co/100x100.png", // Placeholder for school logo
     },
+    // Add more education items here.
   ],
+  // To add a new project, copy an existing block, modify its content, and ensure 'id' and 'dataAiHint' are updated.
   projects: [
-    {
-      id: "proj1_existing", // Keep original project, ensure ID is unique if conflicts
-      name: "Personal Computing & Networking Lab", // Original name was more generic
-      description: "A hands-on initiative focusing on PC assembly, multi-OS configuration (Windows & Linux), hardware troubleshooting, and optimizing home network setups. This project showcases practical skills in system administration and network management.",
-      technologies: ["Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Assembly", "Network Troubleshooting", "Wi-Fi Optimization", "Dual Boot"],
-      imageUrl: "https://placehold.co/600x400.png",
-      dataAiHint: "computer components network",
-    },
     {
       id: "proj_homelab",
       name: "Home Lab & Personal Computer Setup",
       description: "A self-driven project involving PC assembly from components, installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting and upgrades (RAM, SSD), and optimization of home Wi-Fi networks. This project demonstrates practical skills in system administration, hardware management, and network setup.",
       technologies: ["PC Assembly", "Windows 10/11", "Linux (Ubuntu/Debian)", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization", "Dual Boot"],
       imageUrl: "https://placehold.co/600x400.png", 
-      dataAiHint: "computer hardware setup",
+      dataAiHint: "computer hardware setup", // Keywords for project image (max 2 words)
     }
+    // Add more project items here.
   ],
   skills: {
+    // To add a new technical skill category, add a new object to this array.
+    // To add a new skill within a category, add to its 'skills' array.
     technical: [
       {
         name: "Operating Systems",
-        icon: Laptop,
+        icon: Laptop, // Icon from lucide-react
         skills: [
-          { name: "Windows 10/11 (Installation & Configuration)" },
+          { name: "Windows 10/11 (Installation & Configuration)" }, // Proficiency can be added, e.g., proficiency: 80
           { name: "Basic Linux (Ubuntu/Debian)" },
           { name: "Dual-Boot Environments" },
         ],
@@ -150,7 +185,9 @@ export const portfolioData: CandidateProfile = {
           { name: "Basic Antivirus Management" },
         ],
       },
+      // Add more technical skill categories here.
     ],
+    // To add a new soft skill, simply add a string to this array.
     soft: [
       "Problem Solving",
       "Self-Learning",
@@ -158,6 +195,7 @@ export const portfolioData: CandidateProfile = {
       "Technical Aptitude",
       "Adaptability",
       "Attention to Detail",
+      // Add more soft skills here.
     ],
   },
 };
