@@ -41,7 +41,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden shadow-2xl animate-slide-in-right">
+          <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl animate-slide-in-right">
             <Image
               src={heroImage}
               alt={`${name} - ${title}`}
