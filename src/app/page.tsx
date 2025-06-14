@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center bg-card py-16 md:py-24 animate-fadeIn">
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-          <div className="space-y-6 animate-slide-in-left">
+          <div className="space-y-6 animate-slide-in-left text-center md:text-left">
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
               Hi, I&apos;m <span className="text-accent">{name}</span>
             </h1>
@@ -27,7 +27,7 @@ export default function Home() {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {bio}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col items-center sm:flex-row sm:justify-center md:justify-start gap-4">
               <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
                 <Link href="/projects">
                   View My Work <ArrowRight className="ml-2 h-5 w-5" />
