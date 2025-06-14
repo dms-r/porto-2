@@ -1,3 +1,4 @@
+
 import PageWrapper from '@/components/layout/PageWrapper';
 import SectionTitle from '@/components/SectionTitle';
 import SkillBadge from '@/components/SkillBadge';
@@ -31,10 +32,10 @@ export default function SkillsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-auto-rows-fr">
                     {category.skills.map((skill, skillIndex) => (
-                       <div key={skill.name} className="animate-fadeInUp" style={{animationDelay: `${(catIndex * 0.1) + (skillIndex * 0.05)}s`}}>
-                          <SkillBadge name={skill.name} proficiency={skill.proficiency} />
+                       <div key={skill.name} className="animate-fadeInUp h-full" style={{animationDelay: `${(catIndex * 0.1) + (skillIndex * 0.05)}s`}}>
+                          <SkillBadge name={skill.name} proficiency={skill.proficiency} className="h-full" />
                        </div>
                     ))}
                   </div>
@@ -53,7 +54,7 @@ export default function SkillsPage() {
                   <div className="flex flex-wrap gap-3">
                     {softSkills.map((skill, index) => (
                        <div key={skill} className="animate-fadeInUp" style={{animationDelay: `${(technicalSkills.length * 0.1) + (index * 0.05)}s`}}>
-                        <SkillBadge name={skill} className="bg-secondary/50 border-secondary" />
+                        <SkillBadge name={skill} className="bg-secondary/50 border-secondary text-secondary-foreground" />
                        </div>
                     ))}
                   </div>

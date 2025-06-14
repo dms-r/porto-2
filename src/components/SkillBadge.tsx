@@ -10,19 +10,21 @@ interface SkillBadgeProps {
 
 export default function SkillBadge({ name, proficiency, className }: SkillBadgeProps) {
   return (
-    <div className={cn("p-4 rounded-lg border bg-card shadow-sm hover:shadow-md transition-shadow w-full", className)}>
+    <div className={cn("p-4 rounded-lg border bg-card shadow-sm hover:shadow-md transition-shadow w-full flex flex-col", className)}>
       <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-sm text-foreground">{name}</span>
         {proficiency && (
           <span className="text-xs text-accent font-semibold">{proficiency}%</span>
         )}
       </div>
-      {proficiency && (
-        <Progress value={proficiency} className="h-2" />
-      )}
-      {!proficiency && (
-         <Badge variant="secondary" className="font-medium">{name}</Badge>
-      )}
+      <div className="mt-auto pt-2"> {/* Ensures content below name is pushed down if badge has extra height */}
+        {proficiency && (
+          <Progress value={proficiency} className="h-2" />
+        )}
+        {!proficiency && (
+          <Badge variant="secondary" className="font-medium bg-secondary/50 border-secondary text-secondary-foreground">{name}</Badge>
+        )}
+      </div>
     </div>
   );
 }
