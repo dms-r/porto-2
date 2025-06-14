@@ -147,7 +147,7 @@ export const portfolioData: CandidateProfile = {
       name: "Home Lab",
       description: "A self-driven project involving installation and dual-boot configuration of Windows and Linux operating systems, hardware troubleshooting, and optimization of home Wi-Fi networks.",
       technologies: ["Windows 10/11", "Linux", "Hardware Troubleshooting", "Network Configuration", "Wi-Fi Optimization"],
-      imageUrl: "https://placehold.co/600x400.png", 
+      imageUrl: "https://unsplash.com/photos/ZZ0YbE9n938/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTZ8fGhvZW0lMjBsYWIlMjB0ZWNofGVufDB8fHx8MTc0OTkzNjI0OXww&force=true&w=640", 
       dataAiHint: "setup computer", // Keywords for project image (max 2 words)
     },
     {
@@ -155,15 +155,15 @@ export const portfolioData: CandidateProfile = {
       "name": "Virtual Home Server",
       "description": "I set up a virtual home server on my laptop using VirtualBox and Debian Linux. This project allowed me to explore core home server functionalities. I gained hands-on experience understanding various server roles and the fundamentals of remote access and management within a virtualized environment.",
       "technologies": ["Linux", "VirtualBox", "Networking Basics", "SSH"],
-      "imageUrl": "https://placehold.co/600x400.png",
+      "imageUrl": "https://unsplash.com/photos/M5tzZtFCOfs/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5OTM1MjcyfA&force=true&w=640",
       "dataAiHint": "setup server"
     },
     {
       "id": "proj_pentest",
       "name": "Pentest CBT App",
-      "description": "Conducted penetration testing on a Computer-Based Test (CBT) application. Identified and documented vulnerabilities related to network services using Nmap, Insecure Direct Object References (IDOR), APK analysis for mobile components, web application security, and subdomain enumeration. The goal was to assess and improve the application's security posture.",
-      "technologies": ["Nmap", "IDOR", "Network", "Apk", "Web", "Subdommain"],
-      "imageUrl": "https://placehold.co/600x400.png",
+      "description": "Conducted penetration testing on a Computer-Based Test (CBT) application. Identified and documented vulnerabilities related to network services, code program, respons program, etc. The goal was to assess and improve the application's security posture.",
+      "technologies": ["Nmap", "IDOR", "Network", "Apk", "Web", "Subdommain", "JadX"],
+      "imageUrl": "https://unsplash.com/photos/lVF2HLzjopw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5OTM2ODU2fA&force=true&w=640",
       "dataAiHint": "pentest cbt"
     },
         
@@ -178,8 +178,11 @@ export const portfolioData: CandidateProfile = {
         icon: Laptop, // Icon from lucide-react
         skills: [
           { name: "Windows 10/11", proficiency: 90 }, 
-          { name: "Basic Linux", proficiency: 70 },
-          { name: "Dual-Boot Environments", proficiency: 75 },
+          { name: "Linux (intermediate)", proficiency: 70 },
+          { name: "Debian", proficiency: 75 },
+          { name: "Ubuntu", proficiency: 75 },
+          { name: "OpenSuse", proficiency: 75 },
+          { name: "Fedora", proficiency: 75 },
         ],
       },
       {
@@ -189,7 +192,7 @@ export const portfolioData: CandidateProfile = {
           { name: "PC Component Identification", proficiency: 85 },
           { name: "Hardware Troubleshooting", proficiency: 80 },
           { name: "Peripheral Management", proficiency: 90 },
-          { name: "PC Assembly & Upgrades", proficiency: 75 },
+          { name: "PC Upgrades", proficiency: 75 },
         ],
       },
       {
@@ -198,9 +201,11 @@ export const portfolioData: CandidateProfile = {
         skills: [
           { name: "TCP/IP Fundamentals", proficiency: 70 },
           { name: "DNS & DHCP Configuration", proficiency: 65 },
-          { name: "Internet Connection Troubleshooting", proficiency: 85 },
+          { name: "Connection Troubleshooting", proficiency: 85 },
           { name: "Wi-Fi Setup & Optimization", proficiency: 80 },
-          { name: "Basic Network Security", proficiency: 60 },
+          { name: "Network Security", proficiency: 60 },
+          { name: "Firewall", proficiency: 60 },
+          { name: "Basic Network Monitoring", proficiency: 60 },
         ],
       },
       {
@@ -213,6 +218,19 @@ export const portfolioData: CandidateProfile = {
           { name: "Basic Antivirus Management", proficiency: 75 },
         ],
       },
+      {
+        name: "Cyber Security",
+        icon: AppWindow,
+        skills: [
+          { name: "CIA Triad", proficiency: 90 },
+          { name: "Web Concepts", proficiency: 85 },
+          { name: "Basic Security Apk", proficiency: 80 },
+          { name: "Basic Reverse Engineering", proficiency: 75 },
+          { name: "Basic Web Security", proficiency: 75 },
+          { name: "OWASP Top 10 (IDOR)", proficiency: 75 },
+        ],
+      },
+
       // Add more technical skill categories here.
     ],
     // To add a new soft skill, simply add a string to this array.
