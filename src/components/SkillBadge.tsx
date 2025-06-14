@@ -21,7 +21,7 @@ export default function SkillBadge({ name, proficiency, className }: SkillBadgeP
         <Progress value={proficiency} className="h-2" />
       )}
       {!proficiency && (
-         <Badge variant="secondary" className="text-xs bg-accent/20 text-accent-foreground">{name}</Badge>
+         <Badge variant="secondary" className="font-medium">{name}</Badge>
       )}
     </div>
   );
