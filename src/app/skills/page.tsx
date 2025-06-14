@@ -35,7 +35,7 @@ export default function SkillsPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-auto-rows-fr">
                     {category.skills.map((skill, skillIndex) => (
                        <div key={skill.name} className="animate-fadeInUp h-full" style={{animationDelay: `${(catIndex * 0.1) + (skillIndex * 0.05)}s`}}>
-                          <SkillBadge name={skill.name} proficiency={skill.proficiency} className="h-full" />
+                          <SkillBadge name={skill.name} className="h-full" />
                        </div>
                     ))}
                   </div>
