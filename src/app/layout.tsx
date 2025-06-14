@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -6,23 +7,23 @@ import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ElegantFolio - Web Developer Portfolio',
-    template: '%s | ElegantFolio',
+    default: 'ElegantFolio - Dimas Refaldy Portfolio',
+    template: '%s | ElegantFolio - Dimas Refaldy',
   },
-  description: 'Welcome to the professional web development portfolio of a creative and skilled developer. Explore projects, skills, and experience.',
-  keywords: ['web developer', 'portfolio', 'react', 'nextjs', 'tailwindcss', 'typescript', 'full stack developer', 'frontend developer', 'backend developer'],
-  authors: [{ name: 'Candidate Name' }], // Replace with actual name
-  creator: 'Candidate Name', // Replace with actual name
+  description: 'Welcome to the professional portfolio of Dimas Refaldy, a passionate IT enthusiast and high school graduate. Explore projects, skills, and experience.',
+  keywords: ['IT support', 'network technology', 'hardware troubleshooting', 'software configuration', 'Dimas Refaldy', 'portfolio', 'fresh graduate', 'technical support'],
+  authors: [{ name: 'Dimas Refaldy' }],
+  creator: 'Dimas Refaldy',
   openGraph: {
-    title: 'ElegantFolio - Web Developer Portfolio',
-    description: 'Discover innovative web solutions and a passion for development.',
+    title: 'ElegantFolio - Dimas Refaldy Portfolio',
+    description: 'Discover Dimas Refaldy\'s journey in IT and network technology.',
     type: 'website',
     locale: 'en_US',
-    // url: 'YOUR_DEPLOYED_URL_HERE', // Replace with actual URL when deployed
+    // url: 'YOUR_DEPLOYED_URL_HERE', 
     // siteName: 'ElegantFolio',
-    // images: [ // Add a default OG image
+    // images: [ 
     //   {
-    //     url: 'YOUR_OG_IMAGE_URL_HERE', // Replace with actual URL
+    //     url: 'YOUR_OG_IMAGE_URL_HERE', 
     //     width: 1200,
     //     height: 630,
     //     alt: 'ElegantFolio Logo',
@@ -31,13 +32,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ElegantFolio - Web Developer Portfolio',
-    description: 'Explore a collection of web development projects and skills.',
-    // site: '@yourtwitterhandle', // Replace with actual Twitter handle
+    title: 'ElegantFolio - Dimas Refaldy Portfolio',
+    description: 'Explore Dimas Refaldy\'s technical skills and projects.',
+    // site: '@yourtwitterhandle', 
     // creator: '@yourtwitterhandle',
-    // images: ['YOUR_TWITTER_IMAGE_URL_HERE'], // Replace with actual URL
+    // images: ['YOUR_TWITTER_IMAGE_URL_HERE'], 
   },
-  robots: { // Basic SEO robots configuration
+  robots: { 
     index: true,
     follow: true,
     googleBot: {
@@ -48,8 +49,8 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // manifest: '/manifest.json', // If you have a manifest file
-  // icons: { // Favicon setup
+  // manifest: '/manifest.json', 
+  // icons: { 
   //   icon: '/favicon.ico',
   //   shortcut: '/favicon-16x16.png',
   //   apple: '/apple-touch-icon.png',
