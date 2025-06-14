@@ -74,7 +74,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
+            <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
               <Link href="/projects">
                 See All Projects <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
