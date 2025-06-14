@@ -78,7 +78,7 @@ export default function Home() {
       </section>
       
       {/* Brief Experience Overview Section */}
-      <section id="brief-experience" className="py-16 md:py-24 bg-secondary/20">
+      <section id="brief-experience" className="py-16 md:py-24">
          <div className="container mx-auto px-4 md:px-6">
           <SectionTitle>Career Highlights</SectionTitle>
           <div className="space-y-8">
