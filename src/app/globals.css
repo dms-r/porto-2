@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   :root {
-    --background: 220 13% 95%; /* Light Gray #F0F2F5 */
+    --background: 0 0% 100%; /* White */
     --foreground: 227 30% 15%; /* Darker Navy for text */
 
     --card: 0 0% 100%; /* White */
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     --secondary: 190 28% 65%; /* Lighter Muted Teal for secondary elements */
     --secondary-foreground: 0 0% 100%; /* White for text on secondary */
 
-    --muted: 220 13% 90%; /* Slightly darker gray for muted elements */
+    --muted: 0 0% 96%; /* Very Light Gray (e.g., #F5F5F5) */
     --muted-foreground: 227 20% 40%; /* Softer navy for muted text */
 
     --accent: 190 28% 57%; /* Muted Teal #73A7B3 */
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 85%; /* Subtle border color */
+    --border: 0 0% 90%; /* Light Gray Border (e.g., #E6E6E6) */
     --input: 220 10% 88%; /* Input background */
     --ring: 190 28% 57%; /* Muted Teal for focus rings */
 
@@ -110,4 +110,3 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
-
