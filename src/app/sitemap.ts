@@ -5,7 +5,7 @@ import { portfolioData } from '@/data/portfolioData';
 // IMPORTANT: Replace this with your actual deployed website URL
 const BASE_URL = 'https://your-domain.com';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> { // Changed to async
   const staticPages = [
     '', // Home page
     '/experience',
@@ -34,3 +34,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return sitemapEntries;
 }
+
