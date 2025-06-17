@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Briefcase, Code, Lightbulb, Users, Mail, GraduationCap } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -70,7 +70,10 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background p-6">
-              <div className="flex flex-col space-y-4">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col space-y-4 mt-4"> {/* Added mt-4 for spacing if SheetHeader takes up visual space, though sr-only hides it */}
                 <SheetClose asChild>
                   <Link href="/" className="mb-6 text-2xl font-headline font-bold text-primary">
                     ElegantFolio
