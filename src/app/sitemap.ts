@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 import { portfolioData } from '@/data/portfolioData';
 
 // IMPORTANT: Replace this with your actual deployed website URL
-const BASE_URL = 'https://your-domain.com';
+const BASE_URL = 'https://dpublic.my.id';
 
 export const dynamic = 'force-static'; // Ensures the route is treated as static during export
 

@@ -11,4 +11,4 @@ User-Agent: GPTBot
 Disallow: /
 
 
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://dpublic.my.id/sitemap.xml
