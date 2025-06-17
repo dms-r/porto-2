@@ -4,7 +4,7 @@ import SectionTitle from '@/components/SectionTitle';
 import SkillBadge from '@/components/SkillBadge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { portfolioData } from '@/data/portfolioData';
-import type { SkillCategory } from '@/data/portfolioData';
+import type { SkillCategory, Skill } from '@/data/portfolioData'; // Import Skill type
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
@@ -33,9 +33,9 @@ export default function SkillsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-auto-rows-fr">
-                    {category.skills.map((skill, skillIndex) => (
+                    {category.skills.map((skill: Skill, skillIndex: number) => ( // Use Skill type
                        <div key={skill.name} className="animate-fadeInUp h-full" style={{animationDelay: `${(catIndex * 0.1) + (skillIndex * 0.05)}s`}}>
-                          <SkillBadge name={skill.name} className="h-full" />
+                          <SkillBadge name={skill.name} level={skill.level} className="h-full" />
                        </div>
                     ))}
                   </div>
@@ -52,9 +52,9 @@ export default function SkillsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-3">
-                    {softSkills.map((skill, index) => (
-                       <div key={skill} className="animate-fadeInUp" style={{animationDelay: `${(technicalSkills.length * 0.1) + (index * 0.05)}s`}}>
-                        <SkillBadge name={skill} className="bg-secondary/50 border-secondary text-secondary-foreground" />
+                    {softSkills.map((skillName, index) => ( // Changed skill to skillName for clarity
+                       <div key={skillName} className="animate-fadeInUp" style={{animationDelay: `${(technicalSkills.length * 0.1) + (index * 0.05)}s`}}>
+                        <SkillBadge name={skillName} className="bg-secondary/50 border-secondary text-secondary-foreground" />
                        </div>
                     ))}
                   </div>

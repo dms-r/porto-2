@@ -1,13 +1,14 @@
 
 import { cn } from "@/lib/utils";
+import type { SkillLevel } from "@/data/portfolioData";
 
 interface SkillBadgeProps {
   name: string;
+  level?: SkillLevel; // Changed from proficiency to level
   className?: string; // This className applies to the outer card div
-  // proficiency is no longer used for rendering
 }
 
-export default function SkillBadge({ name, className }: SkillBadgeProps) {
+export default function SkillBadge({ name, level, className }: SkillBadgeProps) {
   return (
     <div className={cn(
       "p-4 rounded-lg border bg-card shadow-sm hover:shadow-md transition-shadow",
@@ -17,6 +18,11 @@ export default function SkillBadge({ name, className }: SkillBadgeProps) {
       <span className="font-medium text-sm text-foreground">
         {name}
       </span>
+      {level && (
+        <span className="text-xs text-muted-foreground mt-1">
+          Level: {level}
+        </span>
+      )}
     </div>
   );
 }

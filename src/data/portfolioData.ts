@@ -6,7 +6,7 @@
 
 import type { LucideIcon } from 'lucide-react';
 // Importing icons from lucide-react. Add any new icons you might need for skill categories here.
-import { Laptop, Cpu, Wifi, AppWindow } from 'lucide-react';
+import { Laptop, Cpu, Wifi, AppWindow, ShieldCheck } from 'lucide-react'; // Added ShieldCheck for Cyber Security
 
 // --- INTERFACE DEFINITIONS ---
 // These interfaces define the structure for your portfolio data.
@@ -47,15 +47,25 @@ export interface ProjectItem {
 }
 
 /**
+ * Defines the levels of skill proficiency.
+ */
+export type SkillLevel = 'Novice' | 'Advanced Beginner' | 'Competent' | 'Proficient' | 'Expert';
+
+/**
+ * Represents an individual skill.
+ */
+export interface Skill {
+  name: string; // The name of the specific skill (e.g., "JavaScript", "Git").
+  level?: SkillLevel; // Optional: Descriptive level of understanding.
+}
+
+/**
  * Represents a category of skills (e.g., "Programming Languages", "Tools").
  */
 export interface SkillCategory {
   name: string; // The name of the skill category (e.g., "Frontend Development").
   icon: LucideIcon; // An icon component from lucide-react representing this category (e.g., Code2, Database).
-  skills: {
-    name: string; // The name of the specific skill (e.g., "JavaScript", "Git").
-    proficiency?: number; // Optional: A number from 0 to 100 representing your proficiency level. If omitted, a simple badge without a progress bar will be shown.
-  }[];
+  skills: Skill[];
 }
 
 /**
@@ -120,7 +130,7 @@ export const portfolioData: CandidateProfile = {
         "Analyze the vulnerability of a web or mobile app, thus ensuring it remains safe from similar attacks.",
         "Create reports or documentation needed to report bugs found.",
       ],
-      logoUrl: "https://placehold.co/100x100.png?text=Bug Hunter", // Placeholder logo
+      logoUrl: "https://placehold.co/100x100.png?text=Bug%20Hunter", // Placeholder logo
     },
 
     // Add more work experience items here by duplicating the object structure above.
@@ -161,8 +171,8 @@ export const portfolioData: CandidateProfile = {
     {
       "id": "proj_pentest",
       "name": "Pentest CBT App",
-      "description": "Conducted penetration testing on a Computer-Based Test (CBT) application. Identified and documented vulnerabilities related to network services, code program, respons program, etc. The goal was to assess and improve the application's security posture.",
-      "technologies": ["Nmap", "IDOR", "Network", "Apk", "Web", "Subdommain", "JadX"],
+      "description": "Conducted penetration testing on a Computer-Based Test (CBT) application. Identified and documented vulnerabilities related to network services, application code, and overall program response. The goal was to assess and improve the application's security posture by examining potential attack vectors like Insecure Direct Object References (IDOR), network weaknesses, and subdomain enumeration.",
+      "technologies": ["Nmap", "IDOR", "Network Analysis", "APK Analysis", "Web Security", "Subdomain Enumeration", "JadX"],
       "imageUrl": "https://unsplash.com/photos/lVF2HLzjopw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzQ5OTM2ODU2fA&force=true&w=640",
       "dataAiHint": "pentest cbt"
     },
@@ -177,57 +187,57 @@ export const portfolioData: CandidateProfile = {
         name: "Operating Systems",
         icon: Laptop, // Icon from lucide-react
         skills: [
-          { name: "Windows 10/11", proficiency: 90 }, 
-          { name: "Linux (intermediate)", proficiency: 70 },
-          { name: "Debian", proficiency: 75 },
-          { name: "Ubuntu", proficiency: 75 },
-          { name: "OpenSuse", proficiency: 75 },
-          { name: "Fedora", proficiency: 75 },
+          { name: "Windows 10/11", level: "Expert" }, 
+          { name: "Linux (intermediate)", level: "Proficient" },
+          { name: "Debian", level: "Proficient" },
+          { name: "Ubuntu", level: "Proficient" },
+          { name: "OpenSuse", level: "Proficient" },
+          { name: "Fedora", level: "Proficient" },
         ],
       },
       {
         name: "Hardware",
         icon: Cpu,
         skills: [
-          { name: "PC Component Identification", proficiency: 85 },
-          { name: "Hardware Troubleshooting", proficiency: 80 },
-          { name: "Peripheral Management", proficiency: 90 },
-          { name: "PC Upgrades", proficiency: 75 },
+          { name: "PC Component Identification", level: "Expert" },
+          { name: "Hardware Troubleshooting", level: "Proficient" },
+          { name: "Peripheral Management", level: "Expert" },
+          { name: "PC Upgrades", level: "Proficient" },
         ],
       },
       {
         name: "Networking",
         icon: Wifi,
         skills: [
-          { name: "TCP/IP Fundamentals", proficiency: 70 },
-          { name: "DNS & DHCP Configuration", proficiency: 65 },
-          { name: "Connection Troubleshooting", proficiency: 85 },
-          { name: "Wi-Fi Setup & Optimization", proficiency: 80 },
-          { name: "Network Security", proficiency: 60 },
-          { name: "Firewall", proficiency: 60 },
-          { name: "Basic Network Monitoring", proficiency: 60 },
+          { name: "TCP/IP Fundamentals", level: "Proficient" },
+          { name: "DNS & DHCP Configuration", level: "Proficient" },
+          { name: "Connection Troubleshooting", level: "Expert" },
+          { name: "Wi-Fi Setup & Optimization", level: "Proficient" },
+          { name: "Network Security", level: "Competent" },
+          { name: "Firewall", level: "Competent" },
+          { name: "Basic Network Monitoring", level: "Competent" },
         ],
       },
       {
         name: "Software & Applications",
         icon: AppWindow,
         skills: [
-          { name: "Microsoft Office Suite", proficiency: 90 },
-          { name: "Google Workspace", proficiency: 85 },
-          { name: "Application Management", proficiency: 80 },
-          { name: "Basic Antivirus Management", proficiency: 75 },
+          { name: "Microsoft Office Suite", level: "Expert" },
+          { name: "Google Workspace", level: "Expert" },
+          { name: "Application Management", level: "Proficient" },
+          { name: "Basic Antivirus Management", level: "Proficient" },
         ],
       },
       {
         name: "Cyber Security",
-        icon: AppWindow,
+        icon: ShieldCheck, // Using ShieldCheck icon
         skills: [
-          { name: "CIA Triad", proficiency: 90 },
-          { name: "Web Concepts", proficiency: 85 },
-          { name: "Basic Security Apk", proficiency: 80 },
-          { name: "Basic Reverse Engineering", proficiency: 75 },
-          { name: "Basic Web Security", proficiency: 75 },
-          { name: "OWASP Top 10 (IDOR)", proficiency: 75 },
+          { name: "CIA Triad", level: "Expert" },
+          { name: "Web Concepts", level: "Expert" },
+          { name: "Basic Security Apk", level: "Proficient" },
+          { name: "Basic Reverse Engineering", level: "Proficient" },
+          { name: "Basic Web Security", level: "Proficient" },
+          { name: "OWASP Top 10 (IDOR)", level: "Proficient" },
         ],
       },
 
