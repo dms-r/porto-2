@@ -10,10 +10,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Search, Archive, Tag } from 'lucide-react';
+import { ArrowRight, Search, Archive } from 'lucide-react';
 import { format } from 'date-fns';
 
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 6;
 
 export default function BlogClientPage({ allPostsData }: { allPostsData: PostData[] }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -74,31 +74,30 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
           </Button>
         </div>
 
-        <div className="grid gap-8 max-w-4xl mx-auto min-h-[400px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto min-h-[400px]">
           {paginatedPosts.length > 0 ? (
             paginatedPosts.map(({ slug, date, title, excerpt, tags }) => (
-              <Link href={`/blog/${slug}`} key={slug} className="group block">
-                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+              <Link href={`/blog/${slug}`} key={slug} className="group block h-full">
+                <Card className="shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col h-full bg-card/50 hover:bg-card">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-headline text-primary group-hover:text-accent transition-colors">{title}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground">
+                    <CardTitle className="text-xl font-headline text-primary group-hover:text-accent transition-colors">{title}</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground pt-1">
                       <time dateTime={date}>{format(new Date(date), 'LLLL d, yyyy')}</time>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-foreground mb-4">{excerpt}</p>
+                  <CardContent className="flex-grow py-0">
+                    <p className="text-muted-foreground text-sm line-clamp-3">{excerpt}</p>
                   </CardContent>
-                  <CardFooter className="flex-col items-start gap-4">
+                  <CardFooter className="flex-col items-start gap-4 mt-auto pt-4">
                      {tags && tags.length > 0 && (
                       <div className="flex flex-wrap items-center gap-2">
-                         <Tag className="h-4 w-4 text-muted-foreground" />
                         {tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="font-normal">{tag}</Badge>
+                          <Badge key={tag} variant="secondary" className="font-normal text-xs">{tag}</Badge>
                         ))}
                       </div>
                     )}
-                    <div className="flex items-center font-semibold text-accent mt-auto pt-2">
-                      Read more
+                    <div className="flex items-center font-semibold text-accent text-sm pt-2">
+                      Read Post
                       <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardFooter>

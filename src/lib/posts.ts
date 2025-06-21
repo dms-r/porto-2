@@ -15,6 +15,9 @@ export interface PostData {
   excerpt: string;
   tags?: string[];
   contentHtml?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  imageAiHint?: string;
   [key: string]: any;
 }
 
@@ -39,6 +42,9 @@ export async function getSortedPostsData(): Promise<PostData[]> {
       date: matterResult.data.date,
       excerpt: matterResult.data.excerpt,
       tags: matterResult.data.tags || [],
+      imageUrl: matterResult.data.imageUrl,
+      imageAlt: matterResult.data.imageAlt,
+      imageAiHint: matterResult.data.imageAiHint,
       ...matterResult.data,
     };
   });
@@ -90,6 +96,9 @@ export async function getPostData(slug: string): Promise<PostData> {
     date: matterResult.data.date,
     excerpt: matterResult.data.excerpt,
     tags: matterResult.data.tags || [],
+    imageUrl: matterResult.data.imageUrl,
+    imageAlt: matterResult.data.imageAlt,
+    imageAiHint: matterResult.data.imageAiHint,
     ...matterResult.data,
   };
 }
