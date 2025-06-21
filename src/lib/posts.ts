@@ -17,7 +17,7 @@ export interface PostData {
   [key: string]: any;
 }
 
-export function getSortedPostsData(): PostData[] {
+export async function getSortedPostsData(): Promise<PostData[]> {
   // Get file names under /src/blog
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -51,7 +51,7 @@ export function getSortedPostsData(): PostData[] {
   });
 }
 
-export function getAllPostSlugs() {
+export async function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {

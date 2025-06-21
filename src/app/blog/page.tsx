@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     description: 'A collection of thoughts, tutorials, and updates on my journey.',
 };
 
-export default function BlogPage() {
-  const allPostsData = getSortedPostsData();
+export default async function BlogPage() {
+  const allPostsData = await getSortedPostsData();
 
   return <BlogClientPage allPostsData={allPostsData} />;
 }
