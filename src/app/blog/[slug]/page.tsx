@@ -124,7 +124,7 @@ export default async function PostPage({ params }: Props) {
 
             <div
               id="article-content"
-              className="prose dark:prose-invert lg:prose-lg max-w-none prose-p:text-foreground prose-headings:text-primary prose-a:text-accent prose-strong:text-foreground"
+              className="prose dark:prose-invert lg:prose-lg max-w-none prose-p:text-foreground prose-p:leading-relaxed prose-headings:text-primary prose-a:text-accent prose-strong:text-foreground"
               dangerouslySetInnerHTML={{ __html: post.contentHtml! }}
             />
 

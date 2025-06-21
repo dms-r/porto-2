@@ -74,29 +74,29 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto min-h-[400px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto min-h-[400px]">
           {paginatedPosts.length > 0 ? (
             paginatedPosts.map(({ slug, date, title, excerpt, tags }) => (
               <Link href={`/blog/${slug}`} key={slug} className="group block h-full">
                 <Card className="shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col h-full bg-card/50 hover:bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-headline text-primary group-hover:text-accent transition-colors">{title}</CardTitle>
-                    <CardDescription className="text-sm text-muted-foreground pt-1">
+                  <CardHeader className="p-4 pb-2">
+                    <CardTitle className="text-lg font-headline text-primary group-hover:text-accent transition-colors">{title}</CardTitle>
+                    <CardDescription className="text-xs text-muted-foreground pt-1">
                       <time dateTime={date}>{format(new Date(date), 'LLLL d, yyyy')}</time>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex-grow py-0">
+                  <CardContent className="flex-grow p-4 pt-0">
                     <p className="text-muted-foreground text-sm line-clamp-3">{excerpt}</p>
                   </CardContent>
-                  <CardFooter className="flex-col items-start gap-4 mt-auto pt-4">
+                  <CardFooter className="flex-col items-start gap-2 mt-auto p-4 pt-2">
                      {tags && tags.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-1.5">
                         {tags.map((tag) => (
                           <Badge key={tag} variant="secondary" className="font-normal text-xs">{tag}</Badge>
                         ))}
                       </div>
                     )}
-                    <div className="flex items-center font-semibold text-accent text-sm pt-2">
+                    <div className="flex items-center font-semibold text-accent text-sm mt-2">
                       Read Post
                       <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
