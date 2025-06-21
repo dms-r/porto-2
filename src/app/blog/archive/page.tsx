@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     description: 'A complete archive of all blog posts, sorted by year.',
 };
 
-export default async function ArchivePage() {
-  const allPosts = await getSortedPostsData();
+export default function ArchivePage() {
+  const allPosts = getSortedPostsData();
 
   const postsByYear = allPosts.reduce((acc, post) => {
     const year = new Date(post.date).getFullYear().toString();
