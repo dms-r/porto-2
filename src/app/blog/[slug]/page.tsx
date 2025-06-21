@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export async function generateStaticParams() {
-  const paths = await getAllPostSlugs();
+export function generateStaticParams() {
+  const paths = getAllPostSlugs();
   return paths;
 }
 

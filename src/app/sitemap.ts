@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Add blog post entries
-  const posts = await getSortedPostsData();
+  const posts = getSortedPostsData();
   const blogEntries = posts.map(post => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date).toISOString(),

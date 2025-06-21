@@ -1,4 +1,3 @@
-'use server';
 
 import fs from 'fs';
 import path from 'path';
@@ -21,7 +20,7 @@ export interface PostData {
   [key: string]: any;
 }
 
-export async function getSortedPostsData(): Promise<PostData[]> {
+export function getSortedPostsData(): PostData[] {
   // Get file names under /src/blog
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -59,7 +58,7 @@ export async function getSortedPostsData(): Promise<PostData[]> {
   });
 }
 
-export async function getAllPostSlugs() {
+export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
