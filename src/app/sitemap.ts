@@ -1,6 +1,7 @@
 
 import type { MetadataRoute } from 'next';
 import { portfolioData } from '@/data/portfolioData';
+import { getSortedPostsData } from '@/lib/posts';
 
 // IMPORTANT: Replace this with your actual deployed website URL
 const BASE_URL = 'https://dpublic.my.id';
@@ -14,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/education',
     '/projects',
     '/skills',
+    '/blog',
     '/contact',
     '/tailor-profile',
   ];
@@ -25,14 +27,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === '' ? 1.0 : 0.8, // Homepage gets higher priority
   }));
 
-  // If you had dynamic project pages (e.g., /projects/[id]), you would add them here:
-  // const projectEntries = portfolioData.projects.map(project => ({
-  //   url: `${BASE_URL}/projects/${project.id}`, // Assuming project.id can be used in a URL
-  //   lastModified: new Date().toISOString(),
-  //   changeFrequency: 'monthly',
-  //   priority: 0.7,
-  // }));
-  // return [...sitemapEntries, ...projectEntries];
+  // Add blog post entries
+  const posts = getSortedPostsData();
+  const blogEntries = posts.map(post => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date).toISOString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
-  return sitemapEntries;
+  return [...sitemapEntries, ...blogEntries];
 }
