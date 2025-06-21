@@ -13,9 +13,10 @@ interface TocEntry {
 
 interface TableOfContentsProps {
   contentSelector: string;
+  isMobile?: boolean; // New prop
 }
 
-export default function TableOfContents({ contentSelector }: TableOfContentsProps) {
+export default function TableOfContents({ contentSelector, isMobile = false }: TableOfContentsProps) {
   const [headings, setHeadings] = useState<TocEntry[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -65,36 +66,44 @@ export default function TableOfContents({ contentSelector }: TableOfContentsProp
     return null;
   }
 
+  const TocNav = (
+    <nav>
+      <ul className="space-y-2 border-l border-border">
+        {headings.map((heading) => (
+          <li key={heading.id}>
+            <a
+              href={`#${heading.id}`}
+              className={cn(
+                'block text-sm transition-colors hover:text-primary -ml-px border-l-2',
+                {
+                  'pl-3': heading.level === 2,
+                  'pl-6': heading.level === 3,
+                  'pl-9': heading.level === 4,
+                },
+                heading.id === activeId
+                  ? 'font-semibold text-primary border-primary'
+                  : 'text-muted-foreground border-transparent'
+              )}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+
+  if (isMobile) {
+    return TocNav;
+  }
+
   return (
     <aside className="sticky top-24 hidden lg:block">
       <h3 className="text-lg font-headline font-semibold mb-4 flex items-center text-primary">
         <List className="mr-2 h-5 w-5 text-accent" />
         Table of Contents
       </h3>
-      <nav>
-        <ul className="space-y-2 border-l border-border">
-          {headings.map((heading) => (
-            <li key={heading.id}>
-              <a
-                href={`#${heading.id}`}
-                className={cn(
-                  'block text-sm transition-colors hover:text-primary -ml-px border-l-2',
-                  {
-                    'pl-3': heading.level === 2,
-                    'pl-6': heading.level === 3,
-                    'pl-9': heading.level === 4,
-                  },
-                  heading.id === activeId
-                    ? 'font-semibold text-primary border-primary'
-                    : 'text-muted-foreground border-transparent'
-                )}
-              >
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {TocNav}
     </aside>
   );
 }

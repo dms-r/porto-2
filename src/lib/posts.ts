@@ -13,6 +13,7 @@ export interface PostData {
   title: string;
   date: string;
   excerpt: string;
+  tags?: string[];
   contentHtml?: string;
   [key: string]: any;
 }
@@ -37,6 +38,7 @@ export async function getSortedPostsData(): Promise<PostData[]> {
       title: matterResult.data.title,
       date: matterResult.data.date,
       excerpt: matterResult.data.excerpt,
+      tags: matterResult.data.tags || [],
       ...matterResult.data,
     };
   });
@@ -64,6 +66,11 @@ export async function getAllPostSlugs() {
 
 export async function getPostData(slug: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
+  
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Post not found for slug: ${slug}`);
+  }
+  
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the post metadata section
@@ -82,6 +89,7 @@ export async function getPostData(slug: string): Promise<PostData> {
     title: matterResult.data.title,
     date: matterResult.data.date,
     excerpt: matterResult.data.excerpt,
+    tags: matterResult.data.tags || [],
     ...matterResult.data,
   };
 }

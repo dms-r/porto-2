@@ -2,6 +2,7 @@
 title: 'My First Blog Post'
 date: '2024-01-01'
 excerpt: 'This is a short excerpt of my first blog post, written in Markdown!'
+tags: ['Example', 'Markdown', 'First Post']
 ---
 
 This is the main content of my first post. Welcome to my new blog!

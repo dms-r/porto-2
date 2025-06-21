@@ -6,10 +6,11 @@ import Link from 'next/link';
 import { type PostData } from '@/lib/posts';
 import PageWrapper from '@/components/layout/PageWrapper';
 import SectionTitle from '@/components/SectionTitle';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Search } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Search, Archive, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 
 const POSTS_PER_PAGE = 5;
@@ -24,7 +25,8 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
     }
     return allPostsData.filter(post =>
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
     );
   }, [searchQuery, allPostsData]);
 
@@ -37,7 +39,7 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      window.scrollTo(0, 0); // Scroll to top on page change
+      window.scrollTo(0, 0);
     }
   };
 
@@ -49,43 +51,57 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
           Here are some of my thoughts, tutorials, and updates on my journey.
         </p>
 
-        {/* Search Input */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="relative">
+        <div className="max-w-md mx-auto mb-12 flex flex-col sm:flex-row gap-4">
+          <div className="relative flex-grow">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search articles..."
+              placeholder="Search articles or tags..."
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
-                setCurrentPage(1); // Reset to first page on new search
+                setCurrentPage(1);
               }}
               className="pl-10"
               aria-label="Search blog posts"
             />
           </div>
+          <Button asChild variant="outline">
+            <Link href="/blog/archive">
+              <Archive className="mr-2 h-4 w-4" />
+              View Archive
+            </Link>
+          </Button>
         </div>
 
-        {/* Posts List */}
         <div className="grid gap-8 max-w-4xl mx-auto min-h-[400px]">
           {paginatedPosts.length > 0 ? (
-            paginatedPosts.map(({ slug, date, title, excerpt }) => (
+            paginatedPosts.map(({ slug, date, title, excerpt, tags }) => (
               <Link href={`/blog/${slug}`} key={slug} className="group block">
-                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col h-full">
                   <CardHeader>
                     <CardTitle className="text-2xl font-headline text-primary group-hover:text-accent transition-colors">{title}</CardTitle>
                     <CardDescription className="text-sm text-muted-foreground">
                       <time dateTime={date}>{format(new Date(date), 'LLLL d, yyyy')}</time>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <p className="text-foreground mb-4">{excerpt}</p>
-                    <div className="flex items-center font-semibold text-accent">
+                  </CardContent>
+                  <CardFooter className="flex-col items-start gap-4">
+                     {tags && tags.length > 0 && (
+                      <div className="flex flex-wrap items-center gap-2">
+                         <Tag className="h-4 w-4 text-muted-foreground" />
+                        {tags.map((tag) => (
+                          <Badge key={tag} variant="secondary" className="font-normal">{tag}</Badge>
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex items-center font-semibold text-accent mt-auto pt-2">
                       Read more
                       <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
-                  </CardContent>
+                  </CardFooter>
                 </Card>
               </Link>
             ))
@@ -96,7 +112,6 @@ export default function BlogClientPage({ allPostsData }: { allPostsData: PostDat
           )}
         </div>
 
-        {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2 sm:gap-4 mt-12">
             <Button
