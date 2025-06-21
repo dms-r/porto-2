@@ -12,6 +12,7 @@ import { format } from 'date-fns';
 import { CalendarDays, ChevronLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { portfolioData } from '@/data/portfolioData';
 
 type Props = {
   params: { slug: string };
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const paths = await getAllPostSlugs();
-  return paths.map(p => ({ slug: p.params.slug }));
+  return paths;
 }
 
 export default async function PostPage({ params }: Props) {
