@@ -8,7 +8,7 @@ const BASE_URL = 'https://dpublic.my.id';
 
 export const dynamic = 'force-static'; // Ensures the route is treated as static during export
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '', // Home page
     '/experience',
